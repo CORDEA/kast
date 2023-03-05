@@ -9,5 +9,11 @@ class KAST_API UServerSettings : public UObject
 
 public:
 	UPROPERTY(Config)
-	FString ServerHost;
+	FString Host;
+
+	UPROPERTY(Config)
+	FString PostTopsPath;
+
+	UPROPERTY(Config)
+	FString PostBottomsPath;
 };
