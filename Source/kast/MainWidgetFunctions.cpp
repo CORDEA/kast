@@ -3,6 +3,8 @@
 
 #include "MainWidgetFunctions.h"
 
+#include "ServerSettings.h"
+
 void UMainWidgetFunctions::OnSubmitted(
 	FString length,
 	FString shoulderLength,
@@ -11,4 +13,5 @@ void UMainWidgetFunctions::OnSubmitted(
 	FString yukitake
 )
 {
+	const UServerSettings* settings = GetDefault<UServerSettings>();
 }
