@@ -9,7 +9,7 @@ public class kast : ModuleRules
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
 		PublicDependencyModuleNames.AddRange(new[] {"Core", "CoreUObject", "Engine", "InputCore"});
-		PrivateDependencyModuleNames.AddRange(new[] {"Json"});
+		PrivateDependencyModuleNames.AddRange(new[] {"HTTP", "Json"});
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });

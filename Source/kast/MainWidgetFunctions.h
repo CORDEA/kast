@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Interfaces/IHttpRequest.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "MainWidgetFunctions.generated.h"
 
@@ -16,10 +17,12 @@ class KAST_API UMainWidgetFunctions : public UBlueprintFunctionLibrary
 
 	UFUNCTION(BlueprintCallable)
 	static void OnSubmitted(
-		FString length,
-		FString shoulderLength,
-		FString width,
-		FString sleeveLength,
-		FString yukitake
+		FString Length,
+		FString ShoulderLength,
+		FString Width,
+		FString SleeveLength,
+		FString Yukitake
 	);
+
+	static void OnNext(FHttpRequestPtr Request, FHttpResponsePtr Response, bool bConnectedSuccessfully);
 };
