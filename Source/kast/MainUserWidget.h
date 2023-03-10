@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/CanvasPanel.h"
-#include "MainCanvasPanel.generated.h"
+#include "Blueprint/UserWidget.h"
+#include "MainUserWidget.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class KAST_API UMainCanvasPanel : public UCanvasPanel
+class KAST_API UMainUserWidget : public UUserWidget
 {
 	GENERATED_BODY()
 	
