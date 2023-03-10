@@ -7,6 +7,7 @@
 
 #include "HttpModule.h"
 #include "ServerSettings.h"
+#include "Interfaces/IHttpResponse.h"
 
 void UMainUserWidget::OnSubmitSucceeded_Implementation()
 {
@@ -44,9 +45,15 @@ void UMainUserWidget::OnSubmitted(
 	Request->SetURL("https://" + Settings->Host + Settings->PostTopsPath);
 	Request->OnProcessRequestComplete().BindLambda([&](
 		FHttpRequestPtr,
-		FHttpResponsePtr,
+		FHttpResponsePtr Response,
 		bool)
 		{
+			if (Response.Get()->GetResponseCode() != 200)
+			{
+				OnSubmitFailed();
+				return;
+			}
+			OnSubmitSucceeded();
 		}
 	);
 	Request->ProcessRequest();
